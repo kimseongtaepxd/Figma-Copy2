@@ -1,0 +1,222 @@
+html {
+  background-color: #000;
+}
+
+.border {
+  width: 220px;
+  height: 284px;
+
+  border-radius: 12px; /*1*/
+  border: 1px solid transparent; /*2*/
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(-45deg, #3edf9b1a, #000);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  backdrop-filter: blur(30px);
+}
+
+.Token {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 220px;
+  height: 284px;
+  left: 0px;
+  top: 0px;
+
+  background: radial-gradient(
+      85.21% 85.21% at 50% -17.61%,
+      rgba(172, 30, 255, 0.137129) 0%,
+      rgba(172, 30, 255, 0.2) 0%,
+      rgba(172, 30, 255, 0.126621) 0%,
+      rgba(172, 30, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.05);
+  /* Card/CardBlur */
+
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 12px;
+}
+
+.Badge {
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  left: 0px;
+  top: 112px;
+
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: linear-gradient(
+    78.4deg,
+    #b5bbf7 -13.11%,
+    #cfcee0 6.27%,
+    #d6c9db 47.85%,
+    #bae8ff 61.83%,
+    #cdccf8 74.32%,
+    #cdccf8 80.25%,
+    #fffbfd 86.21%,
+    #fffbfd 92.32%,
+    #fccef5 99.95%
+  );
+  clip-path: polygon(
+    80px 0,
+    calc(100%) 0,
+    100% 20px,
+    100% calc(100% - 112px),
+    calc(100% - 112px) 100%,
+    20px 100%,
+    0 calc(100%),
+    0 80px
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  span {
+    display: block;
+    transform: rotate(-45deg) translate(-10px, 15px);
+  }
+}
+
+.TokenImage {
+  width: 92px;
+  height: 92px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.GameName {
+  width: 168px;
+  height: 26px;
+
+  /* 🖥 PC/Heading/04B */
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+  /* identical to box height, or 26px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "cv13" on;
+
+  /* ref/Gray/Gray00(WH) */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.Tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 4px;
+
+  width: 23px;
+  height: 20px;
+
+  /* ref/Opacity(White)/Opacity10
+
+Tab Default BG
+*/
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  /* identical to box height, or 16px */
+
+  font-feature-settings: "cv13" on;
+}
+
+.TokenCost {
+  width: 97px;
+  height: 21px;
+
+  /* 🖥 PC/Number/05 */
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  /* identical to box height, or 21px */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "tnum" on, "lnum" on, "cv13" on;
+
+  /* ref/Gray/Gray00(WH) */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.Rate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 6px;
+
+  width: 63px;
+  height: 24px;
+
+  /* 가격/상승 BG */
+
+  background: rgba(39, 198, 131, 0.1);
+  border-radius: 12px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  /* or 18px */
+
+  text-align: right;
+  font-feature-settings: "tnum" on, "lnum" on, "cv13" on;
+
+  /* 가격/상승(Default) */
+
+  color: #27c683;
+}
