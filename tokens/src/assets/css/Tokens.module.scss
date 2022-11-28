@@ -9,7 +9,7 @@ html {
   border-radius: 12px; /*1*/
   border: 1px solid transparent; /*2*/
   background-image: linear-gradient(#000, #000),
-    linear-gradient(-45deg, #3edf9b1a, #000);
+    linear-gradient(-45deg, #3edf9b1a, #3e3e3e);
   background-origin: border-box;
   background-clip: content-box, border-box;
 
@@ -19,7 +19,7 @@ html {
 .Token {
   box-sizing: border-box;
 
-  position: absolute;
+  position: relative;
   width: 220px;
   height: 284px;
   left: 0px;
@@ -85,44 +85,54 @@ html {
   width: 92px;
   height: 92px;
 
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  margin: 36px 62px 12px 66px;
 }
 
-.GameName {
+.TokenName {
   width: 168px;
   height: 26px;
-
-  /* 🖥 PC/Heading/04B */
 
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 130%;
-  /* identical to box height, or 26px */
 
+  display: flex;
+  justify-content: center;
+
+  font-feature-settings: "cv13" on;
+
+  color: #ffffff;
+
+  margin: 0px 24px 8px 28px;
+  /* Inside auto layout */
+}
+
+.sub {
+  display: flex;
+  gap: 4px;
+
+  margin: 0px 91.5px 27px 95.5px;
+}
+.GameName {
+  width: 33px;
+  height: 18px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
   display: flex;
   align-items: center;
   text-align: center;
   font-feature-settings: "cv13" on;
 
-  /* ref/Gray/Gray00(WH) */
-
-  color: #ffffff;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  color: #bfbfbf;
 }
 
 .Tag {
-  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -141,12 +151,6 @@ Tab Default BG
 
   border-radius: 4px;
 
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -157,6 +161,18 @@ Tab Default BG
   font-feature-settings: "cv13" on;
 }
 
+.TokenBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 172px;
+  height: 24px;
+
+  padding: 20px 0px;
+  margin: 0px auto;
+
+  border-top: solid 1px #3e3e3e;
+}
 .TokenCost {
   width: 97px;
   height: 21px;

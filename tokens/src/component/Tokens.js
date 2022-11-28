@@ -10,12 +10,12 @@ const Tokens = () => {
         </div>
         <img className={styles.TokenImage} alt="" />
         <span className={styles.TokenName}>DRACO</span>
-        <div>
+        <div className={styles.sub}>
           <span className={styles.GameName}>MIR4</span>
           <span className={styles.Tag}></span>
         </div>
         {/* 구분선 */}
-        <div>
+        <div className={styles.TokenBottom}>
           <span className={styles.TokenCost}>$1.9312</span>
           <span className={styles.Rate}>+9.66%</span>
         </div>
