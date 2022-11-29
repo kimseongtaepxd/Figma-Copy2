@@ -1,238 +1,479 @@
-html {
-  background-color: #000;
+@import "./_mixin";
+
+.Title {
+  color: #fff;
 }
 
 .border {
-  width: 220px;
-  height: 284px;
-
-  border-radius: 12px; /*1*/
   border: 1px solid transparent; /*2*/
   background-image: linear-gradient(#000, #000),
     linear-gradient(-45deg, #3edf9b1a, #3e3e3e);
   background-origin: border-box;
   background-clip: content-box, border-box;
+  .Token {
+    box-sizing: border-box;
 
-  backdrop-filter: blur(30px);
-}
+    position: relative;
+    left: 0px;
+    top: 0px;
+  }
 
-.Token {
-  box-sizing: border-box;
+  .Badge {
+    position: absolute;
 
-  position: relative;
-  width: 220px;
-  height: 284px;
-  left: 0px;
-  top: 0px;
+    background: linear-gradient(
+      78.4deg,
+      #b5bbf7 -13.11%,
+      #cfcee0 6.27%,
+      #d6c9db 47.85%,
+      #bae8ff 61.83%,
+      #cdccf8 74.32%,
+      #cdccf8 80.25%,
+      #fffbfd 86.21%,
+      #fffbfd 92.32%,
+      #fccef5 99.95%
+    );
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  background: radial-gradient(
-      85.21% 85.21% at 50% -17.61%,
-      rgba(172, 30, 255, 0.137129) 0%,
-      rgba(172, 30, 255, 0.2) 0%,
-      rgba(172, 30, 255, 0.126621) 0%,
-      rgba(172, 30, 255, 0) 100%
-    ),
-    rgba(255, 255, 255, 0.05);
-  /* Card/CardBlur */
-
-  /* Note: backdrop-filter has minimal browser support */
-
-  border-radius: 12px;
-}
-
-.Badge {
-  position: absolute;
-  width: 112px;
-  height: 112px;
-  left: 0px;
-  top: 112px;
-
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-
-  background: linear-gradient(
-    78.4deg,
-    #b5bbf7 -13.11%,
-    #cfcee0 6.27%,
-    #d6c9db 47.85%,
-    #bae8ff 61.83%,
-    #cdccf8 74.32%,
-    #cdccf8 80.25%,
-    #fffbfd 86.21%,
-    #fffbfd 92.32%,
-    #fccef5 99.95%
-  );
-  clip-path: polygon(
-    80px 0,
-    calc(100%) 0,
-    100% 20px,
-    100% calc(100% - 112px),
-    calc(100% - 112px) 100%,
-    20px 100%,
-    0 calc(100%),
-    0 80px
-  );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  span {
+      font-family: "TWK Everett";
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%;
+      color: #1a1a1a;
+    }
+  }
+  .TokenImage {
     display: block;
-    transform: rotate(-45deg) translate(-10px, 15px);
+  }
+
+  .TokenName {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+
+    display: flex;
+    justify-content: center;
+
+    font-feature-settings: "cv13" on;
+
+    color: #ffffff;
+  }
+
+  .sub {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .GameName {
+    white-space: nowrap;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    text-align: center;
+    font-feature-settings: "cv13" on;
+
+    color: #bfbfbf;
+  }
+
+  .Tag {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* identical to box height, or 16px */
+
+    font-feature-settings: "cv13" on;
+
+    color: #ffffff;
+  }
+
+  .TokenBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+
+    border-top: solid 1px #3e3e3e;
+  }
+  .TokenCost {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+    display: flex;
+    align-items: center;
+    font-feature-settings: "tnum" on, "lnum" on, "cv13" on;
+
+    color: #ffffff;
   }
 }
 
-.TokenImage {
-  width: 92px;
-  height: 92px;
+@media (min-width: 1197px) {
+  .border {
+    width: 218px;
+    height: 284px;
 
-  margin: 36px 62px 12px 66px;
+    border-radius: 12px; /*1*/
+
+    backdrop-filter: blur(30px);
+    .Token {
+      width: 218px;
+      height: 284px;
+
+      border-radius: 12px;
+    }
+
+    .Badge {
+      position: absolute;
+      width: 112px;
+      height: 112px;
+
+      clip-path: polygon(
+        80px 0,
+        calc(100%) 0,
+        100% 20px,
+        100% calc(100% - 112px),
+        calc(100% - 112px) 100%,
+        20px 100%,
+        0 calc(100%),
+        0 80px
+      );
+      span {
+        font-size: 12px;
+        transform: rotate(-45deg) translate(-30px, 22px);
+      }
+    }
+
+    .TokenImage {
+      width: 92px;
+      height: 92px;
+
+      padding: 36px 62px 12px 66px;
+    }
+
+    .TokenName {
+      width: 168px;
+      height: 26px;
+
+      font-size: 20px;
+
+      padding: 0px 24px 35px 28px;
+    }
+
+    .sub {
+      top: -27px;
+      gap: 4px;
+    }
+    .GameName {
+      height: 18px;
+      font-size: 14px;
+    }
+
+    .Tag {
+      padding: 2px 4px;
+      height: 12px;
+
+      backdrop-filter: blur(10px);
+
+      border-radius: 4px;
+
+      font-size: 12px;
+    }
+
+    .TokenBottom {
+      width: 172px;
+      height: 24px;
+
+      padding: 20px 0px;
+    }
+    .TokenCost {
+      width: 97px;
+      height: 21px;
+
+      font-size: 16px;
+    }
+  }
 }
 
-.TokenName {
-  width: 168px;
-  height: 26px;
+@media (min-width: 1025px) and (max-width: 1196px) {
+  .border {
+    width: 18.2274vw;
+    height: 23.7458vw;
 
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 130%;
+    border-radius: 1.0033vw; /*1*/
 
-  display: flex;
-  justify-content: center;
+    backdrop-filter: blur(2.5084vw);
+    .Token {
+      width: 18.2274vw;
+      height: 23.7458vw;
 
-  font-feature-settings: "cv13" on;
+      border-radius: 1.0033vw;
+    }
 
-  color: #ffffff;
+    .Badge {
+      position: absolute;
+      width: 9.3645vw;
+      height: 9.3645vw;
 
-  margin: 0px 24px 8px 28px;
-  /* Inside auto layout */
+      clip-path: polygon(
+        6.689vw 0,
+        calc(100%) 0,
+        100% 1.6722vw,
+        100% calc(100% - 9.3645vw),
+        calc(100% - 9.3645vw) 100%,
+        1.6722vw 100%,
+        0 calc(100%),
+        0 6.689vw
+      );
+      span {
+        font-size: 1.0033vw;
+        transform: rotate(-45deg) translate(-2.5084vw, 1.8395vw);
+      }
+    }
+
+    .TokenImage {
+      width: 7.6923vw;
+      height: 7.6923vw;
+
+      padding: 3.01vw 5.1839vw 1.0033vw 5.5184vw;
+    }
+
+    .TokenName {
+      width: 14.0468vw;
+      height: 2.1739vw;
+
+      font-size: 1.6722vw;
+
+      padding: 0px 2.0067vw 2.9264vw 2.3411vw;
+    }
+
+    .sub {
+      top: -2.2575vw;
+      gap: 0.3344vw;
+    }
+    .GameName {
+      height: 1.505vw;
+      font-size: 1.1706vw;
+    }
+
+    .Tag {
+      padding: 0.167vw 0.3344vw;
+
+      width: 1.5886vw;
+      height: 1.0033vw;
+
+      backdrop-filter: blur(0.8361vw);
+
+      border-radius: 0.3344vw;
+
+      font-size: 1.0033vw;
+    }
+
+    .TokenBottom {
+      width: 14.3813vw;
+      height: 2.0067vw;
+
+      padding: 1.6722vw 0px;
+    }
+    .TokenCost {
+      width: 8.1104vw;
+      height: 1.7559vw;
+
+      font-size: 1.3378vw;
+    }
+  }
 }
 
-.sub {
-  display: flex;
-  gap: 4px;
+@include tablet {
+  .border {
+    width: 218px;
+    height: 284px;
 
-  margin: 0px 91.5px 27px 95.5px;
-}
-.GameName {
-  width: 33px;
-  height: 18px;
+    border-radius: 12px; /*1*/
 
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 130%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  font-feature-settings: "cv13" on;
+    backdrop-filter: blur(30px);
+    .Token {
+      width: 218px;
+      height: 284px;
 
-  color: #bfbfbf;
-}
+      border-radius: 12px;
+    }
 
-.Tag {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 4px;
+    .Badge {
+      position: absolute;
+      width: 112px;
+      height: 112px;
 
-  width: 23px;
-  height: 20px;
+      clip-path: polygon(
+        80px 0,
+        calc(100%) 0,
+        100% 20px,
+        100% calc(100% - 112px),
+        calc(100% - 112px) 100%,
+        20px 100%,
+        0 calc(100%),
+        0 80px
+      );
+      span {
+        font-size: 12px;
+        transform: rotate(-45deg) translate(-30px, 22px);
+      }
+    }
 
-  /* ref/Opacity(White)/Opacity10
+    .TokenImage {
+      width: 92px;
+      height: 92px;
 
-Tab Default BG
-*/
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  /* Note: backdrop-filter has minimal browser support */
+      padding: 36px 62px 12px 66px;
+    }
 
-  border-radius: 4px;
+    .TokenName {
+      width: 168px;
+      height: 26px;
 
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 130%;
-  /* identical to box height, or 16px */
+      font-size: 20px;
 
-  font-feature-settings: "cv13" on;
-}
+      padding: 0px 24px 35px 28px;
+    }
 
-.TokenBottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 172px;
-  height: 24px;
+    .sub {
+      top: -27px;
+      gap: 4px;
+    }
+    .GameName {
+      height: 18px;
+      font-size: 14px;
+    }
 
-  padding: 20px 0px;
-  margin: 0px auto;
+    .Tag {
+      padding: 2px 4px;
 
-  border-top: solid 1px #3e3e3e;
-}
-.TokenCost {
-  width: 97px;
-  height: 21px;
+      width: 19px;
+      height: 12px;
 
-  /* 🖥 PC/Number/05 */
+      backdrop-filter: blur(10px);
 
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 130%;
-  /* identical to box height, or 21px */
+      border-radius: 4px;
 
-  display: flex;
-  align-items: center;
-  font-feature-settings: "tnum" on, "lnum" on, "cv13" on;
+      font-size: 12px;
+    }
 
-  /* ref/Gray/Gray00(WH) */
+    .TokenBottom {
+      width: 172px;
+      height: 24px;
 
-  color: #ffffff;
+      padding: 20px 0px;
+    }
+    .TokenCost {
+      width: 97px;
+      height: 21px;
 
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+      font-size: 16px;
+    }
+  }
 }
 
-.Rate {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 3px 6px;
+@include mobile {
+  .border {
+    width: 218px;
+    height: 284px;
 
-  width: 63px;
-  height: 24px;
+    border-radius: 12px; /*1*/
 
-  /* 가격/상승 BG */
+    backdrop-filter: blur(30px);
+    .Token {
+      width: 218px;
+      height: 284px;
 
-  background: rgba(39, 198, 131, 0.1);
-  border-radius: 12px;
+      border-radius: 12px;
+    }
 
-  /* Inside auto layout */
+    .Badge {
+      position: absolute;
+      width: 112px;
+      height: 112px;
 
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+      clip-path: polygon(
+        80px 0,
+        calc(100%) 0,
+        100% 20px,
+        100% calc(100% - 112px),
+        calc(100% - 112px) 100%,
+        20px 100%,
+        0 calc(100%),
+        0 80px
+      );
+      span {
+        font-size: 12px;
+        transform: rotate(-45deg) translate(-30px, 22px);
+      }
+    }
 
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 130%;
-  /* or 18px */
+    .TokenImage {
+      width: 92px;
+      height: 92px;
 
-  text-align: right;
-  font-feature-settings: "tnum" on, "lnum" on, "cv13" on;
+      padding: 36px 62px 12px 66px;
+    }
 
-  /* 가격/상승(Default) */
+    .TokenName {
+      width: 168px;
+      height: 26px;
 
-  color: #27c683;
+      font-size: 20px;
+
+      padding: 0px 24px 35px 28px;
+    }
+
+    .sub {
+      top: -27px;
+      gap: 4px;
+    }
+    .GameName {
+      height: 18px;
+      font-size: 14px;
+    }
+
+    .Tag {
+      padding: 2px 4px;
+
+      width: 19px;
+      height: 12px;
+
+      backdrop-filter: blur(10px);
+
+      border-radius: 4px;
+
+      font-size: 12px;
+    }
+
+    .TokenBottom {
+      width: 172px;
+      height: 24px;
+
+      padding: 20px 0px;
+    }
+    .TokenCost {
+      width: 97px;
+      height: 21px;
+
+      font-size: 16px;
+    }
+  }
 }

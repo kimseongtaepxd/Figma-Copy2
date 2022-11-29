@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+html {
+  background-color: #000;
+}
+
+.Title {
+  height: 24px;
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-feature-settings: "cv13" on;
+
+  color: #ffffff;
+  padding: 40px 0px;
+  margin: 0 auto;
+}
+
+.Tokens {
+  width: 1196px;
+  margin: 0 auto;
+}

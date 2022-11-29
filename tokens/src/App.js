@@ -1,10 +1,10 @@
-import Tokens from "./component/Tokens.js";
+import TokensSlider from "./component/TokensSlider.js";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Tokens />
+      <TokensSlider />
     </>
   );
 }
