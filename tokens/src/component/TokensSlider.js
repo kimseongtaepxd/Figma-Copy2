@@ -8,9 +8,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
-import Rate from "../component/Rate.js";
+import Tokens from "../component/Tokens";
 
-const Tokens = () => {
+const TokensSlider = () => {
   const token = [
     {
       id: 1,
@@ -23,54 +23,59 @@ const Tokens = () => {
       tag: "",
       tokenCost: 1.9312,
       tokenRate: -4,
+      type: "decrease",
     },
     {
       id: 2,
-      badgeName: "Top Loser",
       bgColor:
         "radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(188, 63, 51, 0.2) 0%, rgba(188, 63, 51, 0) 100%), rgba(255, 255, 255, 0.05)",
+      badgeName: "Top Loser",
       tokenImage: tornado,
       tokenName: "TORNADO",
       gameName: "CrypTornado",
       tag: "+2",
       tokenCost: 1.9312,
       tokenRate: 0,
+      type: "none",
     },
     {
       id: 3,
-      badgeName: "Recentlry Added",
       bgColor:
         "radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(204, 0, 72, 0.2) 0%, rgba(204, 0, 72, 0) 100%), rgba(255, 255, 255, 0.05)",
+      badgeName: "Recentlry Added",
       tokenImage: debco,
       tokenName: "DEBCO",
       gameName: "Dark Eden M",
       tag: "",
       tokenCost: 1.9312,
       tokenRate: 5.59,
+      type: "increase",
     },
     {
       id: 4,
-      badgeName: "Top ROI",
       bgColor:
         "radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(46, 220, 178, 0.2) 0%, rgba(46, 220, 178, 0) 100%), rgba(255, 255, 255, 0.05)",
+      badgeName: "Top ROI",
       tokenImage: reflect,
       tokenName: "REFLECT",
       gameName: "MIR4",
       tag: "+2",
       tokenCost: 1.9312,
       tokenRate: -1.41,
+      type: "decrease",
     },
     {
       id: 5,
-      badgeName: "Most Played",
       bgColor:
         " radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(199, 115, 38, 0.2) 0%, rgba(199, 115, 38, 0) 100%), rgba(255, 255, 255, 0.05)",
+      badgeName: "Most Played",
       tokenImage: tig,
       tokenName: "TIG",
       gameName: "YULGANG GLOBAL",
       tag: "",
       tokenCost: 1.9312,
       tokenRate: 9.66,
+      type: "increase",
     },
   ];
 
@@ -81,7 +86,7 @@ const Tokens = () => {
     slidesToShow: 5,
     variableWidth: true,
     swipeToSlide: true,
-    arrows: false,
+    arrow: false,
     afterChange: function (index) {
       console.log(
         `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
@@ -117,7 +122,7 @@ const Tokens = () => {
 
   return (
     <>
-      <div className="Title">
+      <div className={styles.Title}>
         <span>TOKENS</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -134,35 +139,10 @@ const Tokens = () => {
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </div>
-      <div className="Tokens">
+      <div className={styles.Tokens}>
         <Slider {...settings}>
           {token.map((token) => (
-            <div key={"Token" + token.id} className={styles.border}>
-              <div
-                className={styles.Token}
-                style={{ background: token.bgColor }}
-              >
-                <div className={styles.Badge}>
-                  <span>{token.badgeName}</span>
-                </div>
-                <img
-                  className={styles.TokenImage}
-                  src={token.tokenImage}
-                  alt={token.tokenName}
-                />
-                <div className={styles.TokenName}>{token.tokenName}</div>
-                <div className={styles.sub}>
-                  <span className={styles.GameName}>{token.gameName}</span>
-                  {token.tag !== "" && (
-                    <span className={styles.Tag}>{token.tag}</span>
-                  )}
-                </div>
-                <div className={styles.TokenBottom}>
-                  <span className={styles.TokenCost}>${token.tokenCost}</span>
-                  <Rate tokenRate={token.tokenRate} />
-                </div>
-              </div>
-            </div>
+            <Tokens props={token} key={"Token" + token.id} />
           ))}
         </Slider>
       </div>
@@ -170,4 +150,4 @@ const Tokens = () => {
   );
 };
 
-export default Tokens;
+export default TokensSlider;
