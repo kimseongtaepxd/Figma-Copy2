@@ -7,11 +7,12 @@ import tornado from "../assets/img/img_tornado.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React from "react";
+import React, { useState } from "react";
 import Tokens from "../component/Tokens";
+import UselessButton from "../component/UselessButton";
 
 const TokensSlider = () => {
-  const token = [
+  const [token, setToken] = useState([
     {
       id: 1,
       bgColor:
@@ -77,7 +78,7 @@ const TokensSlider = () => {
       tokenRate: 9.66,
       type: "increase",
     },
-  ];
+  ]);
 
   const settings = {
     className: "center",
@@ -88,7 +89,7 @@ const TokensSlider = () => {
     variableWidth: true,
     swipeToSlide: true,
     dots: false,
-    arrow: false,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
@@ -119,6 +120,28 @@ const TokensSlider = () => {
     ],
   };
 
+  /* 삭제해도 되는 부분 시작 */
+  const ChangeRate = () => {
+    const updateRate = token.map((item) => ({
+      ...item,
+      tokenRate: Math.floor(Math.random() * 20001 - 10000) / 100, // 새로운 아이템 내용을 넣어줌
+    }));
+
+    const updatetype = updateRate.map((item) => ({
+      ...item,
+      type:
+        item.tokenRate > 0
+          ? "increase"
+          : item.tokenRate < 0
+          ? "decrease"
+          : "none", // 새로운 아이템 내용을 넣어줌
+    }));
+
+    setToken(updatetype); // 새로운 리스트를 넣어줌
+  };
+
+  /* 삭제해도 되는 부분 (끝) */
+
   return (
     <>
       <div className={styles.Title}>
@@ -145,6 +168,7 @@ const TokensSlider = () => {
           ))}
         </Slider>
       </div>
+      <UselessButton ChangeRate={ChangeRate} />
     </>
   );
 };
