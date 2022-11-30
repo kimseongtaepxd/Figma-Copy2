@@ -81,12 +81,16 @@ const TokensSlider = () => {
 
   const settings = {
     className: "center",
+    slide: "ul",
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 5,
     variableWidth: true,
     swipeToSlide: true,
+    dots: false,
     arrow: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
