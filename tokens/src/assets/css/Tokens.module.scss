@@ -1,7 +1,7 @@
 @import "./_mixin";
 
 .Title {
-  height: 24px;
+  height: 30px;
   font-family: "Pretendard";
   font-size: 24px;
   font-style: normal;
@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 
   font-feature-settings: "cv13" on;
 
@@ -22,120 +23,120 @@
 .Tokens {
   width: 1196px;
   margin: 0 auto;
-}
+  .Token {
+    box-sizing: border-box;
 
-.Token {
-  box-sizing: border-box;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    border: 1px solid rgba(62, 223, 155, 0.1); /*2*/
+  }
 
-  position: relative;
-  left: 0px;
-  top: 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1); /*2*/
-}
+  .Badge {
+    position: absolute;
 
-.Badge {
-  position: absolute;
+    background: linear-gradient(
+      78.4deg,
+      #b5bbf7 -13.11%,
+      #cfcee0 6.27%,
+      #d6c9db 47.85%,
+      #bae8ff 61.83%,
+      #cdccf8 74.32%,
+      #cdccf8 80.25%,
+      #fffbfd 86.21%,
+      #fffbfd 92.32%,
+      #fccef5 99.95%
+    );
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  background: linear-gradient(
-    78.4deg,
-    #b5bbf7 -13.11%,
-    #cfcee0 6.27%,
-    #d6c9db 47.85%,
-    #bae8ff 61.83%,
-    #cdccf8 74.32%,
-    #cdccf8 80.25%,
-    #fffbfd 86.21%,
-    #fffbfd 92.32%,
-    #fccef5 99.95%
-  );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      font-family: "TWK Everett";
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%;
+      color: #1a1a1a;
+    }
+  }
+  .TokenImage {
+    display: block;
+  }
 
-    font-family: "TWK Everett";
+  .TokenName {
+    font-family: "Pretendard-Bold";
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
-    color: #1a1a1a;
+
+    display: flex;
+    justify-content: center;
+
+    font-feature-settings: "cv13" on;
+
+    color: #ffffff;
   }
-}
-.TokenImage {
-  display: block;
-}
 
-.TokenName {
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
+  .sub {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-  display: flex;
-  justify-content: center;
+  .GameName {
+    white-space: nowrap;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    text-align: center;
+    font-feature-settings: "cv13" on;
 
-  font-feature-settings: "cv13" on;
+    color: #bfbfbf;
+  }
 
-  color: #ffffff;
-}
+  .Tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-.sub {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    background: rgba(255, 255, 255, 0.1);
 
-.GameName {
-  white-space: nowrap;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  text-align: center;
-  font-feature-settings: "cv13" on;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* identical to box height, or 16px */
 
-  color: #bfbfbf;
-}
+    font-feature-settings: "cv13" on;
 
-.Tag {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    color: #ffffff;
+  }
 
-  background: rgba(255, 255, 255, 0.1);
+  .TokenBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
 
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  /* identical to box height, or 16px */
+    border-top: solid 1px #3e3e3e;
+  }
+  .TokenCost {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
 
-  font-feature-settings: "cv13" on;
+    display: flex;
+    align-items: center;
+    font-feature-settings: "tnum" on, "lnum" on, "cv13" on;
 
-  color: #ffffff;
-}
-
-.TokenBottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px auto;
-
-  border-top: solid 1px #3e3e3e;
-}
-.TokenCost {
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-
-  display: flex;
-  align-items: center;
-  font-feature-settings: "tnum" on, "lnum" on, "cv13" on;
-
-  color: #ffffff;
+    color: #ffffff;
+  }
 }
 
 @media (min-width: 1197px) {
@@ -145,76 +146,76 @@
 
     border-radius: 12px;
     backdrop-filter: blur(30px);
-  }
+    .Badge {
+      position: absolute;
+      width: 112px;
+      height: 112px;
 
-  .Badge {
-    position: absolute;
-    width: 112px;
-    height: 112px;
-
-    clip-path: polygon(
-      80px 0,
-      calc(100%) 0,
-      100% 20px,
-      100% calc(100% - 112px),
-      calc(100% - 112px) 100%,
-      20px 100%,
-      0 calc(100%),
-      0 80px
-    );
-    span {
-      font-size: 12px;
-      transform: rotate(-45deg) translate(-30px, 22px);
+      clip-path: polygon(
+        80px 0,
+        calc(100%) 0,
+        100% 20px,
+        100% calc(100% - 112px),
+        calc(100% - 112px) 100%,
+        20px 100%,
+        0 calc(100%),
+        0 80px
+      );
+      span {
+        font-size: 12px;
+        transform: rotate(-45deg) translate(-33px, 22px);
+      }
     }
-  }
 
-  .TokenImage {
-    width: 92px;
-    height: 92px;
+    .TokenImage {
+      width: 92px;
+      height: 92px;
 
-    padding: 36px 62px 12px 66px;
-  }
+      padding: 36px 62px 12px 66px;
+    }
 
-  .TokenName {
-    width: 168px;
-    height: 26px;
+    .TokenName {
+      width: 168px;
+      height: 26px;
 
-    font-size: 20px;
+      font-size: 20px;
 
-    padding: 0px 24px 35px 28px;
-  }
+      padding: 0px 24px 35px 28px;
+    }
 
-  .sub {
-    top: -27px;
-    gap: 4px;
-  }
-  .GameName {
-    height: 18px;
-    font-size: 14px;
-  }
+    .sub {
+      top: -27px;
+      left: 4px;
+      gap: 4px;
+    }
+    .GameName {
+      height: 18px;
+      font-size: 14px;
+    }
 
-  .Tag {
-    padding: 2px 4px;
-    height: 12px;
+    .Tag {
+      padding: 2px 4px;
+      width: 15px;
+      height: 16px;
+      backdrop-filter: blur(10px);
 
-    backdrop-filter: blur(10px);
+      border-radius: 4px;
 
-    border-radius: 4px;
+      font-size: 12px;
+    }
 
-    font-size: 12px;
-  }
+    .TokenBottom {
+      width: 172px;
+      height: 24px;
 
-  .TokenBottom {
-    width: 172px;
-    height: 24px;
+      padding: 20px 0px;
+    }
+    .TokenCost {
+      width: 97px;
+      height: 21px;
 
-    padding: 20px 0px;
-  }
-  .TokenCost {
-    width: 97px;
-    height: 21px;
-
-    font-size: 16px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -225,78 +226,76 @@
 
     border-radius: 1.0033vw;
     backdrop-filter: blur(2.5084vw);
-  }
+    .Badge {
+      position: absolute;
+      width: 9.3645vw;
+      height: 9.3645vw;
 
-  .Badge {
-    position: absolute;
-    width: 9.3645vw;
-    height: 9.3645vw;
-
-    clip-path: polygon(
-      6.689vw 0,
-      calc(100%) 0,
-      100% 1.6722vw,
-      100% calc(100% - 9.3645vw),
-      calc(100% - 9.3645vw) 100%,
-      1.6722vw 100%,
-      0 calc(100%),
-      0 6.689vw
-    );
-    span {
-      font-size: 1.0033vw;
-      transform: rotate(-45deg) translate(-2.5084vw, 1.8395vw);
+      clip-path: polygon(
+        6.689vw 0,
+        calc(100%) 0,
+        100% 1.6722vw,
+        100% calc(100% - 9.3645vw),
+        calc(100% - 9.3645vw) 100%,
+        1.6722vw 100%,
+        0 calc(100%),
+        0 6.689vw
+      );
+      span {
+        font-size: 1.0033vw;
+        transform: rotate(-45deg) translate(-2.7592vw, 1.8395vw);
+      }
     }
-  }
 
-  .TokenImage {
-    width: 7.6923vw;
-    height: 7.6923vw;
+    .TokenImage {
+      width: 7.6923vw;
+      height: 7.6923vw;
 
-    padding: 3.01vw 5.1839vw 1.0033vw 5.5184vw;
-  }
+      padding: 3.01vw 5.1839vw 1.0033vw 5.5184vw;
+    }
 
-  .TokenName {
-    width: 14.0468vw;
-    height: 2.1739vw;
+    .TokenName {
+      width: 14.0468vw;
+      height: 2.1739vw;
 
-    font-size: 1.6722vw;
+      font-size: 1.6722vw;
 
-    padding: 0px 2.0067vw 2.9264vw 2.3411vw;
-  }
+      padding: 0px 2.0067vw 2.9264vw 2.3411vw;
+    }
 
-  .sub {
-    top: -2.2575vw;
-    gap: 0.3344vw;
-  }
-  .GameName {
-    height: 1.505vw;
-    font-size: 1.1706vw;
-  }
+    .sub {
+      top: -2.2575vw;
+      left: 0.3344vw;
+      gap: 0.3344vw;
+    }
+    .GameName {
+      height: 1.505vw;
+      font-size: 1.1706vw;
+    }
 
-  .Tag {
-    padding: 0.167vw 0.3344vw;
+    .Tag {
+      padding: 0.167vw 0.3344vw;
+      width: 1.2542vw;
+      height: 1.3378vw;
+      backdrop-filter: blur(0.8361vw);
 
-    width: 1.5886vw;
-    height: 1.0033vw;
+      border-radius: 0.3344vw;
 
-    backdrop-filter: blur(0.8361vw);
+      font-size: 1.0033vw;
+    }
 
-    border-radius: 0.3344vw;
+    .TokenBottom {
+      width: 14.3813vw;
+      height: 2.0067vw;
 
-    font-size: 1.0033vw;
-  }
+      padding: 1.6722vw 0px;
+    }
+    .TokenCost {
+      width: 8.1104vw;
+      height: 1.7559vw;
 
-  .TokenBottom {
-    width: 14.3813vw;
-    height: 2.0067vw;
-
-    padding: 1.6722vw 0px;
-  }
-  .TokenCost {
-    width: 8.1104vw;
-    height: 1.7559vw;
-
-    font-size: 1.3378vw;
+      font-size: 1.3378vw;
+    }
   }
 }
 
@@ -307,78 +306,76 @@
 
     border-radius: 12px;
     backdrop-filter: blur(30px);
-  }
+    .Badge {
+      position: absolute;
+      width: 112px;
+      height: 112px;
 
-  .Badge {
-    position: absolute;
-    width: 112px;
-    height: 112px;
-
-    clip-path: polygon(
-      80px 0,
-      calc(100%) 0,
-      100% 20px,
-      100% calc(100% - 112px),
-      calc(100% - 112px) 100%,
-      20px 100%,
-      0 calc(100%),
-      0 80px
-    );
-    span {
-      font-size: 12px;
-      transform: rotate(-45deg) translate(-30px, 22px);
+      clip-path: polygon(
+        80px 0,
+        calc(100%) 0,
+        100% 20px,
+        100% calc(100% - 112px),
+        calc(100% - 112px) 100%,
+        20px 100%,
+        0 calc(100%),
+        0 80px
+      );
+      span {
+        font-size: 12px;
+        transform: rotate(-45deg) translate(-33px, 22px);
+      }
     }
-  }
 
-  .TokenImage {
-    width: 92px;
-    height: 92px;
+    .TokenImage {
+      width: 92px;
+      height: 92px;
 
-    padding: 36px 62px 12px 66px;
-  }
+      padding: 36px 62px 12px 66px;
+    }
 
-  .TokenName {
-    width: 168px;
-    height: 26px;
+    .TokenName {
+      width: 168px;
+      height: 26px;
 
-    font-size: 20px;
+      font-size: 20px;
 
-    padding: 0px 24px 35px 28px;
-  }
+      padding: 0px 24px 35px 28px;
+    }
 
-  .sub {
-    top: -27px;
-    gap: 4px;
-  }
-  .GameName {
-    height: 18px;
-    font-size: 14px;
-  }
+    .sub {
+      top: -27px;
+      left: 4px;
+      gap: 4px;
+    }
+    .GameName {
+      height: 18px;
+      font-size: 14px;
+    }
 
-  .Tag {
-    padding: 2px 4px;
+    .Tag {
+      padding: 2px 4px;
+      width: 15px;
+      height: 16px;
+      backdrop-filter: blur(10px);
 
-    width: 19px;
-    height: 12px;
+      border-radius: 4px;
 
-    backdrop-filter: blur(10px);
+      font-size: 12px;
+    }
 
-    border-radius: 4px;
+    .TokenBottom {
+      width: 172px;
+      height: 24px;
 
-    font-size: 12px;
-  }
+      padding: 20px 0px;
+    }
+    .TokenCost {
+      width: 97px;
+      height: 21px;
 
-  .TokenBottom {
-    width: 172px;
-    height: 24px;
-
-    padding: 20px 0px;
-  }
-  .TokenCost {
-    width: 97px;
-    height: 21px;
-
-    font-size: 16px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -389,77 +386,75 @@
 
     border-radius: 12px;
     backdrop-filter: blur(30px);
-  }
+    .Badge {
+      position: absolute;
+      width: 112px;
+      height: 112px;
 
-  .Badge {
-    position: absolute;
-    width: 112px;
-    height: 112px;
-
-    clip-path: polygon(
-      80px 0,
-      calc(100%) 0,
-      100% 20px,
-      100% calc(100% - 112px),
-      calc(100% - 112px) 100%,
-      20px 100%,
-      0 calc(100%),
-      0 80px
-    );
-    span {
-      font-size: 12px;
-      transform: rotate(-45deg) translate(-30px, 22px);
+      clip-path: polygon(
+        80px 0,
+        calc(100%) 0,
+        100% 20px,
+        100% calc(100% - 112px),
+        calc(100% - 112px) 100%,
+        20px 100%,
+        0 calc(100%),
+        0 80px
+      );
+      span {
+        font-size: 12px;
+        transform: rotate(-45deg) translate(-33px, 22px);
+      }
     }
-  }
 
-  .TokenImage {
-    width: 92px;
-    height: 92px;
+    .TokenImage {
+      width: 92px;
+      height: 92px;
 
-    padding: 36px 62px 12px 66px;
-  }
+      padding: 36px 62px 12px 66px;
+    }
 
-  .TokenName {
-    width: 168px;
-    height: 26px;
+    .TokenName {
+      width: 168px;
+      height: 26px;
 
-    font-size: 20px;
+      font-size: 20px;
 
-    padding: 0px 24px 35px 28px;
-  }
+      padding: 0px 24px 35px 28px;
+    }
 
-  .sub {
-    top: -27px;
-    gap: 4px;
-  }
-  .GameName {
-    height: 18px;
-    font-size: 14px;
-  }
+    .sub {
+      top: -27px;
+      left: 4px;
+      gap: 4px;
+    }
+    .GameName {
+      height: 18px;
+      font-size: 14px;
+    }
 
-  .Tag {
-    padding: 2px 4px;
+    .Tag {
+      padding: 2px 4px;
+      width: 15px;
+      height: 16px;
+      backdrop-filter: blur(10px);
 
-    width: 19px;
-    height: 12px;
+      border-radius: 4px;
 
-    backdrop-filter: blur(10px);
+      font-size: 12px;
+    }
 
-    border-radius: 4px;
+    .TokenBottom {
+      width: 172px;
+      height: 24px;
 
-    font-size: 12px;
-  }
+      padding: 20px 0px;
+    }
+    .TokenCost {
+      width: 97px;
+      height: 21px;
 
-  .TokenBottom {
-    width: 172px;
-    height: 24px;
-
-    padding: 20px 0px;
-  }
-  .TokenCost {
-    width: 97px;
-    height: 21px;
-
-    font-size: 16px;
+      font-size: 16px;
+    }
   }
 }

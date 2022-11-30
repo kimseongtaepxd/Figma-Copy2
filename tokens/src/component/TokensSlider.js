@@ -87,11 +87,6 @@ const TokensSlider = () => {
     variableWidth: true,
     swipeToSlide: true,
     arrow: false,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
-    },
     responsive: [
       {
         breakpoint: 1024,
@@ -126,17 +121,17 @@ const TokensSlider = () => {
         <span>TOKENS</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="1"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="9 18 15 12 9 6"></polyline>
+          <circle cx="16" cy="16" r="14"></circle>
+          <polyline points="15 21 21 16 15 10" strokeWidth="2"></polyline>
         </svg>
       </div>
       <div className={styles.Tokens}>
