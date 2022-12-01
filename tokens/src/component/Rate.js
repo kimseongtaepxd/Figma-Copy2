@@ -1,8 +1,9 @@
-import "../assets/css/Rate.scss";
+import styles from "../assets/css/Rate.module.scss";
+
 const Rate = (props) => {
   const rate = Math.abs(props.tokenRate);
   return (
-    <span className={props.type}>
+    <span className={styles[props.type]}>
       {props.tokenRate > 0 ? "+" : props.tokenRate < 0 ? "-" : ""}
       {rate} %
     </span>

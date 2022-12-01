@@ -7,7 +7,7 @@ const Tokens = (token) => {
   return (
     <div
       key={"Token" + token.props.id}
-      className={`${styles.Token} ${token.props.bgColorType}`}
+      className={`${styles.Token} ${styles[token.props.bgColorType]}`}
     >
       <div className={styles.Badge}>
         <span>{token.props.badgeName}</span>
