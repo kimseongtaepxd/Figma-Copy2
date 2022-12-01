@@ -139,6 +139,54 @@
   }
 }
 
+/* Token bgColor class */
+.DRACObgColor {
+  background: radial-gradient(
+      85.21% 85.21% at 50% -17.61%,
+      rgba(172, 30, 255, 0.137129) 0%,
+      rgba(172, 30, 255, 0.2) 0%,
+      rgba(172, 30, 255, 0.126621) 0%,
+      rgba(172, 30, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.05);
+}
+
+.TORNADObgColor {
+  background: radial-gradient(
+      85.21% 85.21% at 50% -17.61%,
+      rgba(188, 63, 51, 0.2) 0%,
+      rgba(188, 63, 51, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.05);
+}
+
+.DEBCObgColor {
+  background: radial-gradient(
+      85.21% 85.21% at 50% -17.61%,
+      rgba(204, 0, 72, 0.2) 0%,
+      rgba(204, 0, 72, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.05);
+}
+
+.REFLECTbgColor {
+  background: radial-gradient(
+      85.21% 85.21% at 50% -17.61%,
+      rgba(46, 220, 178, 0.2) 0%,
+      rgba(46, 220, 178, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.05);
+}
+
+.TIGbgColor {
+  background: radial-gradient(
+      85.21% 85.21% at 50% -17.61%,
+      rgba(199, 115, 38, 0.2) 0%,
+      rgba(199, 115, 38, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.05);
+}
+
 @media (min-width: 1197px) {
   .Token {
     width: 218px;
@@ -219,7 +267,7 @@
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1197px) {
+@media (min-width: 1024px) and (max-width: 1197px) {
   .Token {
     width: 18.2274vw;
     height: 23.7458vw;

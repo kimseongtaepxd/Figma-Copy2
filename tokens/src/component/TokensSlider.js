@@ -15,8 +15,7 @@ const TokensSlider = () => {
   const [token, setToken] = useState([
     {
       id: 1,
-      bgColor:
-        "radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(172, 30, 255, 0.137129) 0%, rgba(172, 30, 255, 0.2) 0%, rgba(172, 30, 255, 0.126621) 0%, rgba(172, 30, 255, 0) 100%), rgba(255, 255, 255, 0.05)",
+      bgColorType: "DRACObgColor",
       badgeName: "TOP Gainer",
       tokenImage: draco,
       tokenName: "DRACO",
@@ -28,8 +27,7 @@ const TokensSlider = () => {
     },
     {
       id: 2,
-      bgColor:
-        "radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(188, 63, 51, 0.2) 0%, rgba(188, 63, 51, 0) 100%), rgba(255, 255, 255, 0.05)",
+      bgColorType: "TORNADObgColor",
       badgeName: "Top Loser",
       tokenImage: tornado,
       tokenName: "TORNADO",
@@ -41,8 +39,7 @@ const TokensSlider = () => {
     },
     {
       id: 3,
-      bgColor:
-        "radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(204, 0, 72, 0.2) 0%, rgba(204, 0, 72, 0) 100%), rgba(255, 255, 255, 0.05)",
+      bgColorType: "DEBCObgColor",
       badgeName: "Recentlry Added",
       tokenImage: debco,
       tokenName: "DEBCO",
@@ -54,8 +51,7 @@ const TokensSlider = () => {
     },
     {
       id: 4,
-      bgColor:
-        "radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(46, 220, 178, 0.2) 0%, rgba(46, 220, 178, 0) 100%), rgba(255, 255, 255, 0.05)",
+      bgColorType: "REFLECTbgColor",
       badgeName: "Top ROI",
       tokenImage: reflect,
       tokenName: "REFLECT",
@@ -67,8 +63,7 @@ const TokensSlider = () => {
     },
     {
       id: 5,
-      bgColor:
-        " radial-gradient(85.21% 85.21% at 50% -17.61%, rgba(199, 115, 38, 0.2) 0%, rgba(199, 115, 38, 0) 100%), rgba(255, 255, 255, 0.05)",
+      bgColorType: "TIGbgColor",
       badgeName: "Most Played",
       tokenImage: tig,
       tokenName: "TIG",
@@ -144,29 +139,31 @@ const TokensSlider = () => {
 
   return (
     <>
-      <div className={styles.Title}>
-        <span>TOKENS</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="16" cy="16" r="14"></circle>
-          <polyline points="15 21 21 16 15 10" strokeWidth="2"></polyline>
-        </svg>
-      </div>
-      <div className={styles.Tokens}>
-        <Slider {...settings}>
-          {token.map((token) => (
-            <Tokens props={token} key={"Token" + token.id} />
-          ))}
-        </Slider>
+      <div className="TokenContainer">
+        <div className={styles.Title}>
+          <span>TOKENS</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="16" cy="16" r="14"></circle>
+            <polyline points="15 21 21 16 15 10" strokeWidth="2"></polyline>
+          </svg>
+        </div>
+        <div className={styles.Tokens}>
+          <Slider {...settings}>
+            {token.map((token) => (
+              <Tokens props={token} key={"Token" + token.id} />
+            ))}
+          </Slider>
+        </div>
       </div>
       <UselessButton ChangeRate={ChangeRate} />
     </>
