@@ -7,25 +7,25 @@ const Tokens = (token) => {
   return (
     <div
       key={"Token" + token.props.id}
-      className={`${styles.Token} ${styles[token.props.bgColorType]}`}
+      className={`${styles.token} ${styles[token.props.bgColorType]}`}
     >
-      <div className={styles.Badge}>
+      <div className={styles.badge}>
         <span>{token.props.badgeName}</span>
       </div>
       <img
-        className={styles.TokenImage}
+        className={styles.tokenImage}
         src={token.props.tokenImage}
         alt={token.props.tokenName}
       />
-      <div className={styles.TokenName}>{token.props.tokenName}</div>
+      <div className={styles.tokenName}>{token.props.tokenName}</div>
       <div className={styles.sub}>
-        <span className={styles.GameName}>{token.props.gameName}</span>
+        <span className={styles.gameName}>{token.props.gameName}</span>
         {token.props.tag !== "" && (
-          <span className={styles.Tag}>{token.props.tag}</span>
+          <span className={styles.tag}>{token.props.tag}</span>
         )}
       </div>
-      <div className={styles.TokenBottom}>
-        <span className={styles.TokenCost}>${token.props.tokenCost}</span>
+      <div className={styles.tokenBottom}>
+        <span className={styles.tokenCost}>${token.props.tokenCost}</span>
         <Rate type={token.props.type} tokenRate={token.props.tokenRate} />
       </div>
     </div>

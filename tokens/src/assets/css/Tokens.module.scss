@@ -1,6 +1,7 @@
 @import "./_mixin";
 
-.Title {
+.title {
+  width: 100vw;
   height: 30px;
   font-family: "Pretendard";
   font-size: 24px;
@@ -20,10 +21,10 @@
   margin: 0 auto;
 }
 
-.Tokens {
+.tokens {
   width: 1196px;
   margin: 0 auto;
-  .Token {
+  .token {
     box-sizing: border-box;
 
     position: relative;
@@ -32,7 +33,7 @@
     border: 1px solid rgba(62, 223, 155, 0.1); /*2*/
   }
 
-  .Badge {
+  .badge {
     position: absolute;
 
     background: linear-gradient(
@@ -60,11 +61,11 @@
       color: #1a1a1a;
     }
   }
-  .TokenImage {
+  .tokenImage {
     display: block;
   }
 
-  .TokenName {
+  .tokenName {
     font-family: "Pretendard-Bold";
     font-style: normal;
     font-weight: 700;
@@ -86,7 +87,7 @@
     align-items: center;
   }
 
-  .GameName {
+  .gameName {
     white-space: nowrap;
     font-family: "Pretendard";
     font-style: normal;
@@ -98,7 +99,7 @@
     color: #bfbfbf;
   }
 
-  .Tag {
+  .tag {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -117,7 +118,7 @@
     color: #ffffff;
   }
 
-  .TokenBottom {
+  .tokenBottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,7 +126,7 @@
 
     border-top: solid 1px #3e3e3e;
   }
-  .TokenCost {
+  .tokenCost {
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 400;
@@ -140,7 +141,7 @@
 }
 
 /* Token bgColor class */
-.DRACObgColor {
+.dracoBgColor {
   background: radial-gradient(
       85.21% 85.21% at 50% -17.61%,
       rgba(172, 30, 255, 0.137129) 0%,
@@ -151,7 +152,7 @@
     rgba(255, 255, 255, 0.05);
 }
 
-.TORNADObgColor {
+.tornadoBgColor {
   background: radial-gradient(
       85.21% 85.21% at 50% -17.61%,
       rgba(188, 63, 51, 0.2) 0%,
@@ -160,7 +161,7 @@
     rgba(255, 255, 255, 0.05);
 }
 
-.DEBCObgColor {
+.debcoBgColor {
   background: radial-gradient(
       85.21% 85.21% at 50% -17.61%,
       rgba(204, 0, 72, 0.2) 0%,
@@ -169,7 +170,7 @@
     rgba(255, 255, 255, 0.05);
 }
 
-.REFLECTbgColor {
+.reflectBgColor {
   background: radial-gradient(
       85.21% 85.21% at 50% -17.61%,
       rgba(46, 220, 178, 0.2) 0%,
@@ -178,7 +179,7 @@
     rgba(255, 255, 255, 0.05);
 }
 
-.TIGbgColor {
+.tigBgColor {
   background: radial-gradient(
       85.21% 85.21% at 50% -17.61%,
       rgba(199, 115, 38, 0.2) 0%,
@@ -187,14 +188,14 @@
     rgba(255, 255, 255, 0.05);
 }
 
-@media (min-width: 1197px) {
-  .Token {
+@include desktop1196 {
+  .token {
     width: 218px;
     height: 284px;
 
     border-radius: 12px;
     backdrop-filter: blur(30px);
-    .Badge {
+    .badge {
       position: absolute;
       width: 112px;
       height: 112px;
@@ -215,14 +216,14 @@
       }
     }
 
-    .TokenImage {
+    .tokenImage {
       width: 92px;
       height: 92px;
 
       padding: 36px 62px 12px 66px;
     }
 
-    .TokenName {
+    .tokenName {
       width: 168px;
       height: 26px;
 
@@ -236,12 +237,12 @@
       left: 4px;
       gap: 4px;
     }
-    .GameName {
+    .gameName {
       height: 18px;
       font-size: 14px;
     }
 
-    .Tag {
+    .tag {
       padding: 2px 4px;
       width: 15px;
       height: 16px;
@@ -252,13 +253,13 @@
       font-size: 12px;
     }
 
-    .TokenBottom {
+    .tokenBottom {
       width: 172px;
       height: 24px;
 
       padding: 20px 0px;
     }
-    .TokenCost {
+    .tokenCost {
       width: 97px;
       height: 21px;
 
@@ -267,14 +268,14 @@
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1197px) {
-  .Token {
+@include desktop1024 {
+  .token {
     width: 18.2274vw;
     height: 23.7458vw;
 
     border-radius: 1.0033vw;
     backdrop-filter: blur(2.5084vw);
-    .Badge {
+    .badge {
       position: absolute;
       width: 9.3645vw;
       height: 9.3645vw;
@@ -295,14 +296,14 @@
       }
     }
 
-    .TokenImage {
+    .tokenImage {
       width: 7.6923vw;
       height: 7.6923vw;
 
       padding: 3.01vw 5.1839vw 1.0033vw 5.5184vw;
     }
 
-    .TokenName {
+    .tokenName {
       width: 14.0468vw;
       height: 2.1739vw;
 
@@ -316,12 +317,12 @@
       left: 0.3344vw;
       gap: 0.3344vw;
     }
-    .GameName {
+    .gameName {
       height: 1.505vw;
       font-size: 1.1706vw;
     }
 
-    .Tag {
+    .tag {
       padding: 0.167vw 0.3344vw;
       width: 1.2542vw;
       height: 1.3378vw;
@@ -332,13 +333,13 @@
       font-size: 1.0033vw;
     }
 
-    .TokenBottom {
+    .tokenBottom {
       width: 14.3813vw;
       height: 2.0067vw;
 
       padding: 1.6722vw 0px;
     }
-    .TokenCost {
+    .tokenCost {
       width: 8.1104vw;
       height: 1.7559vw;
 
@@ -348,13 +349,13 @@
 }
 
 @include tablet {
-  .Token {
+  .token {
     width: 218px;
     height: 284px;
 
     border-radius: 12px;
     backdrop-filter: blur(30px);
-    .Badge {
+    .badge {
       position: absolute;
       width: 112px;
       height: 112px;
@@ -375,14 +376,14 @@
       }
     }
 
-    .TokenImage {
+    .tokenImage {
       width: 92px;
       height: 92px;
 
       padding: 36px 62px 12px 66px;
     }
 
-    .TokenName {
+    .tokenName {
       width: 168px;
       height: 26px;
 
@@ -396,12 +397,12 @@
       left: 4px;
       gap: 4px;
     }
-    .GameName {
+    .gameName {
       height: 18px;
       font-size: 14px;
     }
 
-    .Tag {
+    .tag {
       padding: 2px 4px;
       width: 15px;
       height: 16px;
@@ -412,13 +413,13 @@
       font-size: 12px;
     }
 
-    .TokenBottom {
+    .tokenBottom {
       width: 172px;
       height: 24px;
 
       padding: 20px 0px;
     }
-    .TokenCost {
+    .tokenCost {
       width: 97px;
       height: 21px;
 
@@ -428,13 +429,13 @@
 }
 
 @include mobile {
-  .Token {
+  .token {
     width: 218px;
     height: 284px;
 
     border-radius: 12px;
     backdrop-filter: blur(30px);
-    .Badge {
+    .badge {
       position: absolute;
       width: 112px;
       height: 112px;
@@ -455,14 +456,14 @@
       }
     }
 
-    .TokenImage {
+    .tokenImage {
       width: 92px;
       height: 92px;
 
       padding: 36px 62px 12px 66px;
     }
 
-    .TokenName {
+    .tokenName {
       width: 168px;
       height: 26px;
 
@@ -476,12 +477,12 @@
       left: 4px;
       gap: 4px;
     }
-    .GameName {
+    .gameName {
       height: 18px;
       font-size: 14px;
     }
 
-    .Tag {
+    .tag {
       padding: 2px 4px;
       width: 15px;
       height: 16px;
@@ -492,13 +493,13 @@
       font-size: 12px;
     }
 
-    .TokenBottom {
+    .tokenBottom {
       width: 172px;
       height: 24px;
 
       padding: 20px 0px;
     }
-    .TokenCost {
+    .tokenCost {
       width: 97px;
       height: 21px;
 

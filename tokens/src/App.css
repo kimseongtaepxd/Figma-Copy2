@@ -41,6 +41,7 @@ html,
 body {
   background-color: #000;
   min-width: 360px;
+  overflow-x: hidden;
 }
 
 .slick-list {
@@ -49,4 +50,14 @@ body {
 
 .slick-slide {
   padding-right: 24px;
+}
+
+@media (min-width: 1024px) and (max-width: 1197px) {
+  .slick-list {
+    margin-right: -2.0067vw;
+  }
+
+  .slick-slide {
+    padding-right: 2.0067vw;
+  }
 }

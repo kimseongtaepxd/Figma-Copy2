@@ -12,8 +12,14 @@
   }
 }
 
-@mixin desktop {
-  @media (min-width: #{$breakpoint-desktop}) {
+@mixin desktop1196 {
+  @media (min-width: #{$breakpoint-tokens}) {
+    @content;
+  }
+}
+
+@mixin desktop1024 {
+  @media (min-width: #{$breakpoint-desktop}) and (max-width: #{$breakpoint-tokens}) {
     @content;
   }
 }

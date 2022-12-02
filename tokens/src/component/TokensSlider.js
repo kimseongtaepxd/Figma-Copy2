@@ -7,15 +7,13 @@ import tornado from "../assets/img/img_tornado.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState } from "react";
 import Tokens from "../component/Tokens";
-import UselessButton from "../component/UselessButton";
 
 const TokensSlider = () => {
-  const [token, setToken] = useState([
+  const token = [
     {
       id: 1,
-      bgColorType: "DRACObgColor",
+      bgColorType: "dracoBgColor",
       badgeName: "TOP Gainer",
       tokenImage: draco,
       tokenName: "DRACO",
@@ -27,7 +25,7 @@ const TokensSlider = () => {
     },
     {
       id: 2,
-      bgColorType: "TORNADObgColor",
+      bgColorType: "tornadoBgColor",
       badgeName: "Top Loser",
       tokenImage: tornado,
       tokenName: "TORNADO",
@@ -39,7 +37,7 @@ const TokensSlider = () => {
     },
     {
       id: 3,
-      bgColorType: "DEBCObgColor",
+      bgColorType: "debcoBgColor",
       badgeName: "Recentlry Added",
       tokenImage: debco,
       tokenName: "DEBCO",
@@ -51,7 +49,7 @@ const TokensSlider = () => {
     },
     {
       id: 4,
-      bgColorType: "REFLECTbgColor",
+      bgColorType: "reflectBgColor",
       badgeName: "Top ROI",
       tokenImage: reflect,
       tokenName: "REFLECT",
@@ -63,7 +61,7 @@ const TokensSlider = () => {
     },
     {
       id: 5,
-      bgColorType: "TIGbgColor",
+      bgColorType: "tigBgColor",
       badgeName: "Most Played",
       tokenImage: tig,
       tokenName: "TIG",
@@ -73,11 +71,10 @@ const TokensSlider = () => {
       tokenRate: 9.66,
       type: "increase",
     },
-  ]);
+  ];
 
   const settings = {
     className: "center",
-    slide: "ul",
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 5,
@@ -115,32 +112,10 @@ const TokensSlider = () => {
     ],
   };
 
-  /* 삭제해도 되는 부분 시작 */
-  const ChangeRate = () => {
-    const updateRate = token.map((item) => ({
-      ...item,
-      tokenRate: Math.floor(Math.random() * 20001 - 10000) / 100, // 새로운 아이템 내용을 넣어줌
-    }));
-
-    const updatetype = updateRate.map((item) => ({
-      ...item,
-      type:
-        item.tokenRate > 0
-          ? "increase"
-          : item.tokenRate < 0
-          ? "decrease"
-          : "none", // 새로운 아이템 내용을 넣어줌
-    }));
-
-    setToken(updatetype); // 새로운 리스트를 넣어줌
-  };
-
-  /* 삭제해도 되는 부분 (끝) */
-
   return (
     <>
-      <div className="TokenContainer">
-        <div className={styles.Title}>
+      <div className={styles.tokenContainer}>
+        <div className={styles.title}>
           <span>TOKENS</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +132,7 @@ const TokensSlider = () => {
             <polyline points="15 21 21 16 15 10" strokeWidth="2"></polyline>
           </svg>
         </div>
-        <div className={styles.Tokens}>
+        <div className={styles.tokens}>
           <Slider {...settings}>
             {token.map((token) => (
               <Tokens props={token} key={"Token" + token.id} />
@@ -165,7 +140,6 @@ const TokensSlider = () => {
           </Slider>
         </div>
       </div>
-      <UselessButton ChangeRate={ChangeRate} />
     </>
   );
 };
